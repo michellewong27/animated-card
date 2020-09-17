@@ -116,7 +116,11 @@ img {
     //scale makes it shrink as it comes up when you hover
     transform: translateY(-30%) scale(.8);
 
-    .streamers {
+    .name {
+      //forwards = stay at the end state
+      animation: gameName 250ms forwards;
+    }
+    .stats {
       opacity: 0;
     }
   }
@@ -129,4 +133,28 @@ img {
     //shorter than it is tall
     transform: scale(1.4, 1.2);
   }
+}
+
+@keyframes gameName {
+  //make them happen at all diff times 
+    //0 = very beginning of the animation
+    0% {
+      text-align: left;
+      opacity: 1;
+    }
+
+    20% {
+      text-align: left;
+      opacity: 0;
+    }
+
+    50% {
+      text-align: center;
+      opacity: 0;
+    }
+
+    100% {
+      text-align: center;
+      opacity: 1;
+    }
 }
