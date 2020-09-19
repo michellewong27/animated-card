@@ -9,10 +9,9 @@
   --clr-light: #fff;
   --clr-accent: rgb(222,52,0);
   --clr-accent-dark: rgb(163,38,0);
-  --clr-secondary: rgb(0,62,163);
+  --clr-secondary: rgb(0,76,199);
 
   --br: .5em;
-
   --transition: transform 200ms cubic-bezier(.21, 1.00, .81, 1.00);
 }
 
@@ -36,9 +35,20 @@ img {
   max-width: 100%;
 }
 
+.btn {
+  cursor: pointer;
+  border: 0;
+  background: var(--clr-secondary);
+  border-radius: 100vw;
+  color: var(--clr-light);
+  font-weight: bold;
+  padding: .5em 1.5em;
+}
+
 .game {
   position: relative;
   width: 12.5em;
+  cursor: pointer;
 }
 
 .streamers {
@@ -66,6 +76,7 @@ img {
 
 .front {
   transition: 250ms;
+
   .thumbnail {
     border-radius: var(--br);
   }
@@ -98,7 +109,30 @@ img {
 
 
 .back {
-  display: none;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  .streaming-info {
+    columns: 2;
+    column-rule: 1px solid rgba(255, 255, 255, .25);
+  }
+
+  .game-stat {
+    font-size: 1.125rem;
+    text-align: center;
+
+    span {
+      display: block;
+      font-size: .85rem;
+    }
+  }
 }
 
 .background {
@@ -131,6 +165,10 @@ img {
     }
     .stats {
       opacity: 0;
+    }
+
+    .back {
+      opacity: 1;
     }
   }
 
