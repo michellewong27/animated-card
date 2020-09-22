@@ -137,6 +137,8 @@ img {
       -ms-flex-align: center;
           align-items: center;
   gap: 1.5em;
+  -webkit-transform: translateY(35%);
+          transform: translateY(35%);
 }
 
 .back .streaming-info {
@@ -191,6 +193,12 @@ img {
 
 .game:hover .back {
   opacity: 1;
+  -webkit-transition: ease, opacity 150ms linear, -webkit-transform 250ms;
+  transition: ease, opacity 150ms linear, -webkit-transform 250ms;
+  transition: transform 250ms, ease, opacity 150ms linear;
+  transition: transform 250ms, ease, opacity 150ms linear, -webkit-transform 250ms;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .game:hover .back .streamers {
